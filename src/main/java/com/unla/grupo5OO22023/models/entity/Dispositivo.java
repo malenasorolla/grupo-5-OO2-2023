@@ -1,41 +1,48 @@
 package com.unla.grupo5OO22023.models.entity;
 
-public abstract class Dispositivo {
-//ATRIBUTOS
-	protected int idDispositivo;
-	protected boolean estado;
-//CONSTRUCTORES 
-	public Dispositivo() {
-		super();
-	}
+import javax.persistence.Inheritance;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
+@NoArgsConstructor
+@Data
+@Getter
+@Setter
+@ToString
+@Entity
+@Inheritance(strategy=InheritanceType.JOINED)
+@Table(name ="dispositivo") 
+public abstract class Dispositivo{
+	
+	//ATRIBUTO
+	@Id  
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@NotEmpty
+	@Column(name = "idDispositivo")   
+	protected int idDispositivo; 
+	
+	@NotEmpty
+	@Column(name = "estado")
+	protected boolean estado; 
+	
+	//CONSTRUCTOR
 	public Dispositivo(boolean estado) {
 		super();
 		this.estado = estado;
 	}
-//METODOS ABSTRACTOS QUE VAN A TENER TODOS LOS DISPOS
+
+	//METODOS ABSTRACTOS QUE VAN A TENER TODOS LOS DISPOS
 	public abstract void actualizarEstado();
-
-	public int getIdDispositivo() {
-		return idDispositivo;
-	}
-
-	public void setIdDispositivo(int idDispositivo) {
-		this.idDispositivo = idDispositivo;
-	}
-
-	public boolean isEstado() {
-		return estado;
-	}
-
-	public void setEstado(boolean estado) {
-		this.estado = estado;
-	}
-
-	@Override
-	public String toString() {
-		return "Dispositivo [idDispositivo=" + idDispositivo + ", estado=" + estado + "]";
-	}
-
-	
 }
