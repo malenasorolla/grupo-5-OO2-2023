@@ -8,7 +8,7 @@ import com.unla.grupo5OO22023.helpers.ViewRouteHelper;
 @Controller
 public class HomeController {
 
-	@GetMapping({"/home","/"})
+	@GetMapping({"/home"})
 	public String index()  {
 		return ViewRouteHelper.INDEX;
 	}
