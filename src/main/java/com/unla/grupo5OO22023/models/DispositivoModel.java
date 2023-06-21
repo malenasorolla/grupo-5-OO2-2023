@@ -10,10 +10,12 @@ import lombok.Setter;
 public class DispositivoModel {
 	protected int idDispositivo;
 	protected boolean estado;
-
-	public DispositivoModel(int idDispositivo, boolean estado) {
+	protected String nombre;
+	public DispositivoModel(int idDispositivo, boolean estado, String nombre) {
 		super();
 		this.idDispositivo = idDispositivo;
 		this.estado = estado;
+		this.nombre = nombre;
 	}
+	
 }

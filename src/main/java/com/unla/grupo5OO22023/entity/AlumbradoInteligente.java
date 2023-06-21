@@ -1,4 +1,4 @@
-package com.unla.grupo5OO22023.models.entity;
+package com.unla.grupo5OO22023.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

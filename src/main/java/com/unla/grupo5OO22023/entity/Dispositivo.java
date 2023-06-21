@@ -1,4 +1,4 @@
-package com.unla.grupo5OO22023.models.entity;
+package com.unla.grupo5OO22023.entity;
 
 import javax.persistence.Inheritance;
 import javax.persistence.Inheritance;
@@ -32,6 +32,10 @@ public abstract class Dispositivo{
 	@NotEmpty
 	@Column(name = "idDispositivo")   
 	protected int idDispositivo; 
+	
+	@NotEmpty
+	@Column(name="nombre")
+	protected String nombre;
 	
 	@NotEmpty
 	@Column(name = "estado")
