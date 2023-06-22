@@ -1,10 +1,12 @@
 package com.unla.grupo5OO22023.entity;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -37,22 +39,13 @@ public class Evento {
 	@Column(name = "descripcion")
 	private String descripcion;
 	
-	@ManyToOne
-	@JoinColumn(name = "idDispositivo")
-	private Dispositivo dispositivo;
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="idDispositivo", nullable=true)
+    private Dispositivo dispositivo;
 	
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	@NotEmpty
 	@Column(name = "fechaHora")
-	private LocalDate fechaHora;
+	private LocalDateTime fechaHora;
 
-	public Evento(@NotEmpty int idEvento, @NotEmpty String descripcion, @NotEmpty Dispositivo dispositivo,
-			@NotEmpty LocalDate fechaHora) {
-		super();
-		this.idEvento = idEvento;
-		this.descripcion = descripcion;
-		this.dispositivo = dispositivo;
-		this.fechaHora = fechaHora;
-	}
-	
 }
