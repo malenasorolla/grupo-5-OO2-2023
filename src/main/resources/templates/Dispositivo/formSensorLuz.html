@@ -1,6 +1,51 @@
-<form action = "#" th:action="@{newsensorluz}" th:object="${sensorluz}" method="post">
-	<p> NOMBRE: <input type="string" th:field="*{nombre}"/>
-	<p> ACTIVA DESDE: <input type="datetime-local" th:field="*{activaDesde}"/></p>
-	<p> ACTIVA HASTA: <input type="datetime-local" th:field="*{activaHasta}"/></p>
-	<input type="submit"/>
-</form>
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head">
+</head>
+<body>
+	<header th:replace="plantilla/template :: header"></header>
+	<div class="container mt-4">
+		<div class="col-sm-6">
+			<form th:action="@{/newsluz}" th:object=${sensorluz} method="POST">
+				<div class="card">
+					<div class="card-header">
+						<h3>Sensor Luz</h3>
+					</div>
+					<div class="card-body">
+						<div class="form-group">
+							<label>NOMBRE</label> <input th:field="*{nombre}" type="text"
+								class="form-control" />
+						</div>
+						<div class="form-group">
+							<label>ESTADO</label> <input th:field="*{estado}" type="checkbox" />
+						</div>
+						<div class="form-group">
+							<label>ACTIVA DESDE</label> <input th:field="*{activaDesde}"
+								type="datetime-local" class="form-control" />
+						</div>
+						<div class="form-group">
+							<label>ACTIVA HASTA</label> <input th:field="*{activaHasta}"
+								type="datetime-local" class="form-control" />
+						</div>
+						<div class="form-group">
+							<label>Alumbrado Inteligente</label> <select
+								th:field="*{alumbradoInteligente}" class="form-control">
+								<option th:each="alumbrado : ${alumbrados}"
+									th:value="${alumbrado}" th:text="${alumbrado.nombre}"></option>
+							</select>
+						</div>
+
+						<div class="card-footer">
+							<input type="submit" value="Guardar" class="btn btn-success">
+						</div>
+					</div>
+			</form>
+		</div>
+
+
+	</div>
+	<footer th:replace="plantilla/template :: footer"></footer>
+</body>
+</html>
