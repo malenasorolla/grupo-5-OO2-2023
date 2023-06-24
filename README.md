@@ -12,3 +12,5 @@ Dejo algunos puntos que fuimos realizando antes de empezar el tp:
 **Para testear:**
 - Preferimos usar PostMan(https://www.postman.com/), ya que asi podiamos probar exactamente lo que ibamos necesitando, con errores mas precisos.
 - A veces al usar el explorador, no entendiamos del todo si habia funcionado o no. :) 
+
+**Recordar cambiar el archivo properties con su contraseña y bd**
