@@ -68,6 +68,8 @@ public abstract class Dispositivo{
 
 	public void setEstado(boolean estado) {
 		this.estado = estado;
-	}	
+	}
+	
+	
 	
 }

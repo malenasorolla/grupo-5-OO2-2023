@@ -10,12 +10,13 @@ public class ViewRouteHelper {
 		
     public final static String EventoIndex = "evento/evento";
     public final static String EventoRuta = "/evento/"; //Evento
-    
+    //ERRORES
+    public final static String ERROR_EDITAR="/error/error-editar";
 	
 	public final static String DISPOSITIVO_INDEX = "dispositivo/dispositivos";
 	public final static String DISPOSITIVO_RUTA = "/dispositivo/"; //Dispositivo
 	
-	// Para el DISPOSITIVO //panamiguel
+	// Para el DISPOSITIVO
 		public final static String FORM_SENSORLUZ = "dispositivo/formSensorLuz";
 		public final static String NEW_SENSORLUZ="dispositivo/nuevoSensorLuz";
 		public final static String FORM_SENSORPROXIMIDAD = "dispositivo/formSensorProximidad";
