@@ -9,6 +9,6 @@ Dejo algunos puntos que fuimos realizando antes de empezar el tp:
    ### Excali con esto que comento: 
     - https://excalidraw.com/#room=9c25d46f8f3c64db1484,HN16R9lcR_8mjuADQj148g
 
-### Recordar 
-- Agregar lo de la query
-- *Recordar cambiar el property*
+**Para testear:**
+- Preferimos usar PostMan(https://www.postman.com/), ya que asi podiamos probar exactamente lo que ibamos necesitando, con errores mas precisos.
+- A veces al usar el explorador, no entendiamos del todo si habia funcionado o no. :) 
