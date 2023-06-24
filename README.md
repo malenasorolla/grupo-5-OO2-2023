@@ -14,3 +14,5 @@ Dejo algunos puntos que fuimos realizando antes de empezar el tp:
 - A veces al usar el explorador, no entendiamos del todo si habia funcionado o no. :) 
 
 **Recordar cambiar el archivo properties con su contraseña y bd**
+
+Video de exposicion : https://drive.google.com/drive/folders/1JAPv_RmlwfQDo6TgdxzdJEdHATwxHOfm?usp=sharing
