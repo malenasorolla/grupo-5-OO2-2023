@@ -64,16 +64,19 @@ public class DispositivoController {
 		// Handle the case if the device is not an instance of either child class
 		return ViewRouteHelper.ERROR_EDITAR; // Return an appropriate error page or handle the case as needed
 	}
-	
-	/* public String delete(Model model , @PathVariable int idDispositivo) {
+	@GetMapping("/eliminar/{idDispositivo}")
+	public String delete(Model model , @PathVariable int idDispositivo) {
 		SensorLuz sensorluz = sensorluzService.buscar(idDispositivo);
 		SensorProximidad sensorproximidad = sensorProximidadService.buscar(idDispositivo);
 		
 		if(sensorluz!=null) {
-			model.addAttribute("sensorluz",sensorluz);
+			sensorluzService.eliminar(idDispositivo);
 		}
-		return "redirect:/listar";
-	}*/
+		if(sensorproximidad !=null) {
+			sensorProximidadService.eliminar(idDispositivo);
+		}
+		return "redirect:/dispositivo/listar";
+	}
 
 	// ************************SENSORLUZ***********************************************************
 
