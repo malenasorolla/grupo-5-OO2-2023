@@ -20,13 +20,13 @@ import lombok.ToString;
 @Setter
 @ToString
 @PrimaryKeyJoinColumn(name = "idDispositivo")
-@Table(name="sensorProximidad")
+@Table(name = "sensorProximidad")
 
-public class SensorProximidad extends Dispositivo{
-	//ATRIBUTOS
-	
+public class SensorProximidad extends Dispositivo {
+	// ATRIBUTOS
+
 	@NotEmpty
-	@Column(name = "utilidad") //Si esta en TRUE, esta ocupado, y sino esta libre
+	@Column(name = "utilidad") // Si esta en TRUE, esta ocupado, y sino esta libre
 	private boolean utilidad;
 
 	@NotEmpty
@@ -38,10 +38,10 @@ public class SensorProximidad extends Dispositivo{
 	@Column(name = "salida")
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime salida;
-	
+
 	@Override
 	public void actualizarEstado() {
-		
+
 	}
 
 	public boolean isUtilidad() {
@@ -67,7 +67,5 @@ public class SensorProximidad extends Dispositivo{
 	public void setSalida(LocalDateTime salida) {
 		this.salida = salida;
 	}
-	
-	
-	
+
 }

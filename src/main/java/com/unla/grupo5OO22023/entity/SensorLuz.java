@@ -6,10 +6,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,12 +25,12 @@ import lombok.ToString;
 @Table(name="sensorLuz")
 public class SensorLuz extends Dispositivo {
 
-	@NotEmpty
+	@NotNull
 	@Column(name = "activaDesde")
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime activaDesde;
 
-	@NotEmpty
+	@NotNull
 	@Column(name = "activaHasta")
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime activaHasta;
@@ -61,6 +60,8 @@ public class SensorLuz extends Dispositivo {
 	public void setActivaHasta(LocalDateTime activaHasta) {
 		this.activaHasta = activaHasta;
 	}
+	
+	
 //
 //	public AlumbradoInteligente getAlumbradoInteligente() {
 //		return alumbradoInteligente;
