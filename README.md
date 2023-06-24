@@ -14,5 +14,12 @@ Dejo algunos puntos que fuimos realizando antes de empezar el tp:
 - A veces al usar el explorador, no entendiamos del todo si habia funcionado o no. :) 
 
 **Recordar cambiar el archivo properties con su contraseña y bd**
-
+- Cambiar el archivo properties, a el usuario y contraseña que tiene su workbench.
+  
 Video de exposicion : https://drive.google.com/drive/folders/1JAPv_RmlwfQDo6TgdxzdJEdHATwxHOfm?usp=sharing
+
+** Para levantar el proyecto se debe:
+- Crear la bdd:
+    - create database grupo5bdd;
+ 
+ Ya con eso deberia funcionar.
