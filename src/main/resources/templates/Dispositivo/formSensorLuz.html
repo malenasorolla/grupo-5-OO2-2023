@@ -6,7 +6,7 @@
 	<header th:replace="plantilla/template :: header"></header>
 	<div class="container mt-4">
 		<div class="col-sm-6">
-			<form th:action="@{/newsluz}" th:object=${sensorluz} method="POST">
+			<form th:action="@{/dispositivo/savesluz}" th:object=${sensorluz} method="POST">
 				<div class="card">
 					<div class="card-header">
 						<h3>Sensor Luz</h3>

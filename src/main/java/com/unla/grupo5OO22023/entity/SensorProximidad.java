@@ -8,7 +8,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,16 +25,16 @@ import lombok.ToString;
 public class SensorProximidad extends Dispositivo {
 	// ATRIBUTOS
 
-	@NotEmpty
+	@NotNull
 	@Column(name = "utilidad") // Si esta en TRUE, esta ocupado, y sino esta libre
 	private boolean utilidad;
 
-	@NotEmpty
+	@NotNull
 	@Column(name = "llegada")
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime llegada;
 
-	@NotEmpty
+	@NotNull
 	@Column(name = "salida")
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime salida;

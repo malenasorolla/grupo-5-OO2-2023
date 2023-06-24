@@ -1,6 +1,5 @@
 package com.unla.grupo5OO22023.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +20,8 @@ import com.unla.grupo5OO22023.models.DispositivoModel;
 import com.unla.grupo5OO22023.services.IDispositivoService;
 import com.unla.grupo5OO22023.services.ISensorLuzService;
 import com.unla.grupo5OO22023.services.ISensorProximidadService;
-import com.unla.grupo5OO22023.services.implementation.SensorProximidadService;
+
+import jakarta.validation.Valid;
 
 @Controller
 @RequestMapping("/dispositivo")
@@ -67,25 +67,26 @@ public class DispositivoController {
 	}
 
 	@PostMapping("/savesluz")
-	public String save(SensorLuz sensorluz, Model model) {
+	public String save(@Valid SensorLuz sensorluz, Model model) {
 		sensorluzService.save(sensorluz);
-		return "redirect:/listar";
+		return "redirect:/dispositivo/listar";
 	}
 
+	
 	// ************************SENSORPROXIMIDAD***********************************************************
 
 	@GetMapping("/newsproxi")
 	public String agregarProximidad(Model model) {
 		SensorProximidad sensorProximidad = new SensorProximidad();
 //    	model.addAttribute("sensorProximidad",sensorProximidad);
-		model.addAttribute("sensorProximidad", sensorProximidad);
+		model.addAttribute("sensorproximidad", sensorProximidad);
 		return ViewRouteHelper.FORM_SENSORPROXIMIDAD;
 	}
 
 	@PostMapping("/savesproxi")
-	public String saveProximidad(Dispositivo dispositivo, Model model) {
-		sensorProximidadService.save((SensorProximidad) (dispositivo));
-		return "redirect:/listar";
+	public String saveProximidad(@Valid SensorProximidad sensorProximidad, Model model) {
+		sensorProximidadService.save(sensorProximidad);
+		return "redirect:/dispositivo/listar";
 	}
 
 }

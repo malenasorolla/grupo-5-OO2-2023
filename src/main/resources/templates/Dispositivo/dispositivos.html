@@ -13,9 +13,10 @@
 				<tr>
 					<th>ID</th>
 					<th>NOMBRE</th>
-					<th>TIPO </th>
+					<th>TIPO</th>
 					<th>Fecha/hora inicio</th>
 					<th>Fecha/hora fin</th>
+					<th>Estado</th>
 				</tr>
 			<tbody>
 				<tr th:each="sensorluz:${sensoresLuz}">
@@ -24,10 +25,10 @@
 					<td>Sensor Luz</td>
 					<td th:text="${sensorluz.activaDesde}"></td>
 					<td th:text="${sensorluz.activaHasta}"></td>
-					<td>
-					<a class="btn btn-warning">Editar</a>
-					<a class="btn btn-danger">Eliminar</a>
-					</td>
+					<td th:if="${sensorluz.estado == true}" th:text="Encendido"></td>
+					<td th:if="${sensorluz.estado == false}" th:text="Apagado"></td>
+					<td><a class="btn btn-warning">Editar</a> <a
+						class="btn btn-danger">Eliminar</a></td>
 				</tr>
 				<tr th:each="sensorproximidad:${sensoresProximidad}">
 					<td th:text="${sensorproximidad.idDispositivo}"></td>
@@ -35,10 +36,10 @@
 					<td>Sensor Proximidad</td>
 					<td th:text="${sensorproximidad.llegada}"></td>
 					<td th:text="${sensorproximidad.salida}"></td>
-					<td>
-					<a class="btn btn-warning">Editar</a>
-					<a class="btn btn-danger">Eliminar</a>
-					</td>
+					<td th:if="${sensorproximidad.estado == true}" th:text="Encendido"></td>
+					<td th:if="${sensorproximidad.estado == false}" th:text="Apagado"></td>
+					<td><a class="btn btn-warning">Editar</a> <a
+						class="btn btn-danger">Eliminar</a></td>
 				</tr>
 			</tbody>
 		</table>
@@ -46,5 +47,5 @@
 	<footer th:replace="plantilla/template :: footer"></footer>
 </body>
 
-</html> 
+</html>
 
