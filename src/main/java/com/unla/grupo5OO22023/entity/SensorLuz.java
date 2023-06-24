@@ -36,9 +36,9 @@ public class SensorLuz extends Dispositivo {
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime activaHasta;
 
-	
-	@OneToOne(mappedBy="sensorLuz")
-	private AlumbradoInteligente alumbradoInteligente;
+//	
+//	@OneToOne(mappedBy="sensorLuz")
+//	private AlumbradoInteligente alumbradoInteligente;
 
 	@Override
 	public void actualizarEstado() {
@@ -61,13 +61,13 @@ public class SensorLuz extends Dispositivo {
 	public void setActivaHasta(LocalDateTime activaHasta) {
 		this.activaHasta = activaHasta;
 	}
-
-	public AlumbradoInteligente getAlumbradoInteligente() {
-		return alumbradoInteligente;
-	}
-
-	public void setAlumbradoInteligente(AlumbradoInteligente alumbradoInteligente) {
-		this.alumbradoInteligente = alumbradoInteligente;
-	}
-	
+//
+//	public AlumbradoInteligente getAlumbradoInteligente() {
+//		return alumbradoInteligente;
+//	}
+//
+//	public void setAlumbradoInteligente(AlumbradoInteligente alumbradoInteligente) {
+//		this.alumbradoInteligente = alumbradoInteligente;
+//	}
+//	
 }

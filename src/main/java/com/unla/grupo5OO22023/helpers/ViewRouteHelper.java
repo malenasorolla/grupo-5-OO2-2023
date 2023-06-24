@@ -18,6 +18,6 @@ public class ViewRouteHelper {
 	// Para el DISPOSITIVO //panamiguel
 		public final static String FORM_SENSORLUZ = "dispositivo/formSensorLuz";
 		public final static String NEW_SENSORLUZ="dispositivo/nuevoSensorLuz";
-	
+		public final static String FORM_SENSORPROXIMIDAD = "dispositivo/formSensorProximidad";
 	
 }
