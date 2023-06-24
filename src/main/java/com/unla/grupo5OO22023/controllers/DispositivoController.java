@@ -1,5 +1,8 @@
 package com.unla.grupo5OO22023.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -18,13 +21,11 @@ import com.unla.grupo5OO22023.models.DispositivoModel;
 import com.unla.grupo5OO22023.services.IDispositivoService;
 import com.unla.grupo5OO22023.services.ISensorLuzService;
 import com.unla.grupo5OO22023.services.ISensorProximidadService;
+import com.unla.grupo5OO22023.services.implementation.SensorProximidadService;
 
 @Controller
 @RequestMapping("/dispositivo")
 public class DispositivoController {
-	@Autowired
-	@Qualifier("dispositivoService")
-	private IDispositivoService dispositivoService;
 
 	@Autowired
 	@Qualifier("sensorluzService")
@@ -33,17 +34,27 @@ public class DispositivoController {
 	@Autowired
 	@Qualifier("sensorProximidadService")
 	private ISensorProximidadService sensorProximidadService;
+	@Autowired
+	@Qualifier("dispositivoService")
+	private IDispositivoService dispositivoService;
 
 	@GetMapping("/listar")
-	public String index(Model model) {
-		model.addAttribute("dispositivos", dispositivoService.getAll());
-		return ViewRouteHelper.DispositivoIndex;
+	public String listarDispositivos(Model model) {
+		// List<Dispositivo> dispositivos = dispositivoService.getAll();
+		List<SensorLuz> sensoresLuz = sensorluzService.getAll();
+		List<SensorProximidad> sensoresProximidad = sensorProximidadService.getAll();
+		model.addAttribute("titulo", "Lista de dispositivos");
+		model.addAttribute("tituloSLuz", "Sensores luz");
+		model.addAttribute("tituloSensorProximidad", "Sensores Proximidad");
+		model.addAttribute("sensoresLuz", sensoresLuz);
+		model.addAttribute("sensoresProximidad", sensoresProximidad);
+		return ViewRouteHelper.DISPOSITIVO_INDEX;
 	}
 
 	@PostMapping("/editar")
 	public RedirectView create(@ModelAttribute("dispositivo") DispositivoModel dispositivoModel) {
 		dispositivoService.insertOrUpdate(dispositivoModel);
-		return new RedirectView(ViewRouteHelper.DispositivoRuta);
+		return new RedirectView(ViewRouteHelper.DISPOSITIVO_RUTA);
 	}
 
 	// ************************SENSORLUZ***********************************************************
@@ -56,8 +67,8 @@ public class DispositivoController {
 	}
 
 	@PostMapping("/savesluz")
-	public String save(Dispositivo dispositivo, Model model) {
-		sensorluzService.save((SensorLuz) (dispositivo));
+	public String save(SensorLuz sensorluz, Model model) {
+		sensorluzService.save(sensorluz);
 		return "redirect:/listar";
 	}
 
