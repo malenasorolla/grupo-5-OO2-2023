@@ -1,7 +1,5 @@
 package com.unla.grupo5OO22023.entity;
 
-//import javax.persistence.Inheritance;
-//import javax.persistence.InheritanceType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

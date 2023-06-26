@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.unla.grupo5OO22023.entity.Dispositivo;
 import com.unla.grupo5OO22023.entity.SensorLuz;
 import com.unla.grupo5OO22023.entity.SensorProximidad;
 import com.unla.grupo5OO22023.helpers.ViewRouteHelper;
@@ -38,7 +36,6 @@ public class DispositivoController {
 
 	@GetMapping("/listar")
 	public String listarDispositivos(Model model) {
-		// List<Dispositivo> dispositivos = dispositivoService.getAll();
 		List<SensorLuz> sensoresLuz = sensorluzService.getAll();
 		List<SensorProximidad> sensoresProximidad = sensorProximidadService.getAll();
 		model.addAttribute("titulo", "Lista de dispositivos");
