@@ -60,6 +60,11 @@ public class SensorLuz extends Dispositivo {
 	public void setActivaHasta(LocalDateTime activaHasta) {
 		this.activaHasta = activaHasta;
 	}
+
+	@Override
+	public String toString() {
+		return super.idDispositivo + " - SensorLuz ";
+	}
 	
 	
 //

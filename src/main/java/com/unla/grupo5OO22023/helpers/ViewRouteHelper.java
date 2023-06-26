@@ -8,8 +8,9 @@ public class ViewRouteHelper {
 	//MANDA AL HTML DE INDEX QUE ESTA EN LA CARPETA HOME
 	public final static String INDEX = "home/index";
 		
-    public final static String EventoIndex = "evento/evento";
+    public final static String EventoIndex = "evento/log";
     public final static String EventoRuta = "/evento/"; //Evento
+    public final static String EventoForm = "evento/formEvento";
     //ERRORES
     public final static String ERROR_EDITAR="/error/error-editar";
 	

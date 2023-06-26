@@ -68,4 +68,10 @@ public class SensorProximidad extends Dispositivo {
 		this.salida = salida;
 	}
 
+	@Override
+	public String toString() {
+		return super.idDispositivo +" - SensorProximidad" ;
+	}
+
+	
 }
